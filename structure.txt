@@ -1,0 +1,45 @@
+music_identification_cnn/
+│
+├── data/
+│   ├── raw_songs/
+│   │   ├── song1.wav
+│   │   ├── song2.wav
+│   │   └── ...
+│   │
+│   ├── clips/
+│   │   ├── song1/
+│   │   │   ├── clip_01.wav
+│   │   │   ├── clip_02.wav
+│   │   │   └── ...
+│   │   └── song2/
+│   │
+│   └── noise_samples/
+│
+├── preprocessing/
+│   ├── split_audio.py
+│   ├── add_noise.py
+│   ├── preprocess_audio.py
+│   └── generate_spectrogram.py
+│
+├── model/
+│   ├── cnn_model.py
+│   ├── train.py
+│   ├── evaluate.py
+│   └── saved_model/
+│
+├── backend/
+│   ├── app.py
+│   ├── inference.py
+│   └── audio_utils.py
+│
+├── frontend/
+│   ├── index.html
+│   ├── script.js
+│   └── style.css
+│
+├── experiments/
+│   ├── baseline_mfcc.ipynb
+│   └── cnn_results.ipynb
+│
+├── requirements.txt
+└── README.md

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Music Find</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <span class="wordmark">music find</span>
+    </header>
+
+    <section class="stage" aria-live="polite">
+      <h1 id="headline">What's playing?</h1>
+      <p id="subline" class="muted">Upload a clip or record a few seconds.</p>
+
+      <div id="tabs" class="tabs" role="tablist">
+        <button role="tab" id="tab-upload" aria-selected="true" data-mode="upload">Upload</button>
+        <button role="tab" id="tab-record" aria-selected="false" data-mode="record">Record</button>
+      </div>
+
+      <div id="panel-upload" class="panel">
+        <label id="dropzone" class="dropzone" tabindex="0">
+          <input id="file" type="file" accept="audio/*" hidden>
+          <span class="dz-title">Drop an audio file</span>
+          <span class="muted">or click to browse</span>
+        </label>
+      </div>
+
+      <div id="panel-record" class="panel" hidden>
+        <button id="rec" class="rec" aria-label="Start recording">
+          <span class="rec-ring" id="ring"></span>
+          <span class="rec-dot"></span>
+        </button>
+        <p id="rec-time" class="muted timer">Tap to record</p>
+      </div>
+
+      <div id="busy" class="busy" hidden>
+        <div class="bars"><i></i><i></i><i></i><i></i><i></i></div>
+        <p class="muted">Listening…</p>
+      </div>
+
+      <div id="result" class="result" hidden>
+        <p class="muted label">Best match</p>
+        <h2 id="title"></h2>
+        <p id="confidence" class="muted"></p>
+        <ul id="others" class="others"></ul>
+        <button id="again" class="link">Try another</button>
+      </div>
+
+      <p id="error" class="error" role="alert" hidden></p>
+    </section>
+
+    <footer class="muted">Identifies the 34 songs the model was trained on.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
